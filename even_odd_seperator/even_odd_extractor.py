@@ -2,9 +2,14 @@ from os import path
 
 class EvenOddExtractor():
 
-    def data_clearer():
-        with open(path.join(path.dirname(path.abspath(__file__)), "numbers.txt"), "w"):
+    def data_clearer(chosen_file):
+        """Clears all data in chosen file"""
+        with open(path.join(path.dirname(path.abspath(__file__)), f"{chosen_file}"), "w"):
             pass
+
+    def data_remover():
+        pass
+        
         
     def random_integer_generator():
         from random import randint
