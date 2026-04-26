@@ -7,38 +7,45 @@ class EvenOddExtractor():
         with open(path.join(path.dirname(path.abspath(__file__)), chosen_file), "w"):
             pass
 
-    def data_remover():
-        """Remove data in a specific index or range of lines"""
+    def data_remover(chosen_file):
+        """Remove data in a specific lines or range of lines"""
         while True:
-            what_to_remove = input('Do you want to remove a data in a specific index (1) or a range of lines (2)? (enter "C" to cancel) \n')
-            if what_to_remove == "C" or "c":
+            what_to_remove = input('Do you want to remove a data in a specific lines (1) or a range of lines (2)? (enter "C" to cancel) \n')
+            if what_to_remove == "C":
+                break
+            if what_to_remove == "c":
                 break
             elif what_to_remove == "1":
                 while True:
-                    index_list = []
-                    index_delete = input("Enter the index you want to delete ('N' to stop / 'C' to cancel): ")
-                    if index_delete != 'C' or 'c' or 'N' or 'n' or not index_delete.isdigit:
-                        print("invalid input")
-                    if index_delete == 'C' or 'c':
-                        index_list.clear
-                        break
-                    if index_delete == 'N' or 'n':
-                        break
+                    line_delete = input("Enter the line you want to delete ('C' to cancel): ")
+                    if line_delete.isalpha():
+                        if line_delete == 'C':
+                            break
+                        elif line_delete == 'c':
+                            break
+                        else:
+                            print("invalid input")
+                    elif line_delete.isdigit():
+                        lines = []
+                        with open(path.join(path.dirname(path.abspath(__file__)), chosen_file), "r") as f:
+                            all_lines = f.readlines()
+                        index = int(line_delete) - 1
+                        if 0 <= index < len(all_lines):
+                            all_lines.pop(index)
+                            with open(path.join(path.dirname(path.abspath(__file__)), chosen_file), "w") as f:
+                                f.writelines(all_lines)
                     else:
-                        index_list.append(index_delete)
-                if index_list == []:
-                    break
-                else:
-                    pass
-
+                        print(f"Invalid input. line {line_delete} does not exist. file has {len(all_lines)} lines.")
+                    lines.clear()
             elif what_to_remove == "2":
                 pass
             else:
-                print("input only 1 or 2")
+                print("input only 1 or 2 or C")
             pass
         
         
     def random_integer_generator(numbers_to_generate):
+        """Generate Random Integers based on the user's input"""
         from random import randint
         if numbers_to_generate == 0:
             pass

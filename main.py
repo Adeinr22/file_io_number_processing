@@ -15,7 +15,7 @@ what to do: """)
     
     if program_1 == '1':
         while True:
-            file_choosed = input("Enter the number for the file you want to clear: (1) numbers.txt | (2) even.txt | (3) odd.txt | (C) to cancel \n")
+            file_choosed = input("(1) numbers.txt | (2) even.txt | (3) odd.txt | (C) to cancel \nEnter the number for the file you want to remove data from: ")
             if file_choosed == 'C':
                 break
             elif file_choosed == 'c':
@@ -28,6 +28,23 @@ what to do: """)
                 EvenOddExtractor.data_clearer("odd.txt")
             else:
                 print('Invalid Input.')
+
+    elif program_1 == '2':
+        while True:
+            file_choosed = input("(1) numbers.txt | (2) even.txt | (3) odd.txt | (C) to cancel \nEnter the number for the file you want to remove data from: ")
+            if file_choosed == 'C':
+                break
+            elif file_choosed == 'c':
+                break
+            elif file_choosed == '1':
+                EvenOddExtractor.data_remover("numbers.txt")
+            elif file_choosed == '2':
+                EvenOddExtractor.data_remover("even.txt")
+            elif file_choosed == '3':
+                EvenOddExtractor.data_remover("odd.txt")
+            else:
+                print('Invalid Input.')
+
 
     elif program_1 == '3':
         while True:
