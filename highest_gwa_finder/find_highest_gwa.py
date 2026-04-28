@@ -103,7 +103,12 @@ class HighestGwaFinder:
                     print("Invalid GWA. Please enter a number (e.g., 1.5).")
 
             elif choice == '2':
-                pass
+                name = input("Enter the exact name of the student to remove: ").strip()
+                if name:
+                    self.remove_students(name)
+                else:
+                    print("Name cannot be empty.")
+                    
             elif choice == '3':
                 pass
             elif choice == '4':
