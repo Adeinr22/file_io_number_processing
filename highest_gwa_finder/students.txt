@@ -1,3 +1,20 @@
-andrei, 1.0
-jules, 1.25
-dela, 1.0
+Maria Santos, 1.25
+Jose Rizal, 1.50
+Leonor Rivera, 1.10
+Andres Bonifacio, 1.75
+Gabriela Silang, 1.30
+Francisco Balagtas, 1.90
+Melchora Aquino, 1.20
+Antonio Luna, 1.45
+Gregorio Del Pilar, 1.60
+Emilio Aguinaldo, 1.80
+Apolinario Mabini, 1.15
+Juan Luna, 1.95
+Fernando Amorsolo, 1.40
+Lapu-Lapu, 1.55
+Ramon Magsaysay, 1.35
+Corazon Aquino, 1.65
+Ninoy Aquino, 1.85
+Manny Pacquiao, 2.00
+Lea Salonga, 1.70
+Josefa Llanes Escoda, 1.05
