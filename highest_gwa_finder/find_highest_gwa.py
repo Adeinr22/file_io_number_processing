@@ -108,4 +108,6 @@ class HighestGwaFinder:
 
 
 def run_highest_gwa_program():
-    pass
+    """Entry point called from main.py."""
+    finder = HighestGwaFinder()
+    finder.run()
