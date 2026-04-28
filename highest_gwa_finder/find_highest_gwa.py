@@ -39,7 +39,7 @@ class HighestGwaFinder:
             print(f"Error reading file: {e}")
         return students
 
-    def write_students(self):
+    def write_students(self, students):
         """Writes the list of Student objects back to the file."""
         try:
             with open(self.filepath, "w") as file:
@@ -48,8 +48,16 @@ class HighestGwaFinder:
         except Exception as e:
             print(f"Error writing to file: {e}")
 
-    def add_students(self):
-        pass
+    def add_students(self, name: str, gwa: float):
+        """Adds a new student to the file."""
+        students = self.read_students()
+        if any(s.name.lower() == name.lower() for s in students):
+            print(f"A student named '{name}' already exists. Use a different name or remove the existing one first.")
+            return False
+        students.append(Student(name, gwa))
+        self.write_students(students)
+        print(f"Student '{name}' with GWA {gwa} added successfully.")
+        return True
 
     def remove_students(self):
         pass
@@ -72,7 +80,18 @@ class HighestGwaFinder:
             choice = input("\n Choose an option (1-5): ").strip()
 
             if choice == '1':
-                pass
+                name = input("Enter student name: ").strip()
+                if not name:
+                    print("Name cannot be empty.")
+                    continue
+                try:
+                    gwa = float(input("Enter GWA (e.g., 1.25): ").strip())
+                    if gwa < 1.0 or gwa > 5.0:
+                        print("GWA typically ranges from 1.0 (best) to 5.0 (fail). Still saving, but please check.")
+                    self.add_students(name, gwa)
+                except ValueError:
+                    print("Invalid GWA. Please enter a number (e.g., 1.5).")
+
             elif choice == '2':
                 pass
             elif choice == '3':
