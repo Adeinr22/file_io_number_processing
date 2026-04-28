@@ -1,0 +1,3 @@
+andrei, 1.0
+jules, 1.25
+lloyd, 1.5

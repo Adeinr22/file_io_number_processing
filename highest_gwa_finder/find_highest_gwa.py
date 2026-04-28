@@ -59,8 +59,18 @@ class HighestGwaFinder:
         print(f"Student '{name}' with GWA {gwa} added successfully.")
         return True
 
-    def remove_students(self):
-        pass
+    def remove_students(self, name: str):
+        """Removes a student by name."""
+        students = self.read_students()
+        original_count = len(students)
+        filtered_students = [s for s in students if s.name.lower() != name.lower()]
+        if len(filtered_students) == original_count:
+            print(f"No student named '{name}' found.")
+            return False
+        self.write_students(filtered_students)
+        print(f"Student '{name}' removed successfully.")
+        return True
+
 
     def list_all_students(self):
         pass
