@@ -104,3 +104,18 @@ class EvenOddExtractor():
                 all_numbers.remove(i)
         with open(path.join(path.dirname(path.abspath(__file__)), "numbers.txt"), "w") as f:
             f.writelines(all_numbers)
+
+    def odd_extractor():
+        with open(path.join(path.dirname(path.abspath(__file__)), "numbers.txt"), "r") as f:
+            all_numbers = f.readlines()
+        odd_numbers = []
+        for i in all_numbers:
+            if (int(i) % 2) == 1:
+                odd_numbers.append(i)
+        with open(path.join(path.dirname(path.abspath(__file__)), "odd.txt"), "w") as f:
+            f.writelines(odd_numbers)
+        for i in odd_numbers:
+            if i in all_numbers:
+                all_numbers.remove(i)
+        with open(path.join(path.dirname(path.abspath(__file__)), "numbers.txt"), "w") as f:
+            f.writelines(all_numbers)
