@@ -1,5 +1,6 @@
 from even_odd_seperator.even_odd_extractor import EvenOddExtractor
 
+
 def run_even_odd_program():
     """Even and Odd separator submenu."""
     while True:
