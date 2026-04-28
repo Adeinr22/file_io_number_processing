@@ -91,6 +91,7 @@ class EvenOddExtractor():
                         f.write(f"{randint(-1000, 1000)}\n")
 
     def even_extractor():
+        """extract even numbers from numbers.txt"""
         with open(path.join(path.dirname(path.abspath(__file__)), "numbers.txt"), "r") as f:
             all_numbers = f.readlines()
         even_numbers = []
@@ -106,6 +107,7 @@ class EvenOddExtractor():
             f.writelines(all_numbers)
 
     def odd_extractor():
+        """extract odd numbers from numbers.txt"""
         with open(path.join(path.dirname(path.abspath(__file__)), "numbers.txt"), "r") as f:
             all_numbers = f.readlines()
         odd_numbers = []
@@ -121,6 +123,7 @@ class EvenOddExtractor():
             f.writelines(all_numbers)
 
     def extract_both():
+        """extract both even and odd numbers from numbers.txt"""
         with open(path.join(path.dirname(path.abspath(__file__)), "numbers.txt"), "r") as f:
             all_numbers = f.readlines()
         even_numbers = []
@@ -137,4 +140,3 @@ class EvenOddExtractor():
             f.writelines(odd_numbers)
         with open(path.join(path.dirname(path.abspath(__file__)), "numbers.txt"), "w") as f:
             pass
-
