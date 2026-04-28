@@ -11,7 +11,31 @@ class IntegerProcessor:
 
     def read_integers(self):
         """Reads integers from the input file. Returns a list of integers."""
-
+        integers = []
+        try:
+            with open(self.input_path, "r") as file:
+                for line_num, line in enumerate(file, 1):
+                    line = line.strip()
+                    if not line:
+                        continue
+                    try:
+                        num = int(line)
+                        integers.append(num)
+                    except ValueError:
+                        print(f"Warning: Line {line_num} ('{line}') is not an integer. Skipping.")
+            if len(integers) == 0:
+                print("No valid integers found in the file.")
+            elif len(integers) != 20:
+                print(f"Note: Expected 20 integers, but found {len(integers)}. Processing anyway.")
+        except FileNotFoundError:
+            print(f"Error: File '{self.input_path}' not found.")
+            print("   Please create 'integers.txt' with 20 integers (one per line).")
+            return []
+        except Exception as e:
+            print(f"Unexpected error: {e}")
+            return []
+        return integers
+    
     def process_and_write(self):
         """Creates double.txt (square of evens) and triple.txt (cube of odds)."""
 
