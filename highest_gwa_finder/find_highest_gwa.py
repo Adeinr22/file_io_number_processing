@@ -71,9 +71,17 @@ class HighestGwaFinder:
         print(f"Student '{name}' removed successfully.")
         return True
 
-
     def list_all_students(self):
-        pass
+        """Displays all students with their GWA."""
+        students = self.read_students()
+        if not students:
+            print("No student records found.")
+            return
+        print("\nAll Students:")
+        print("-" * 30)
+        for idx, student in enumerate(students, start=1):
+            print(f"{idx}. {student.name} → GWA: {student.gwa}")
+        print("-" * 30)
 
     def find_highest_gwa(self):
         pass
@@ -108,9 +116,10 @@ class HighestGwaFinder:
                     self.remove_students(name)
                 else:
                     print("Name cannot be empty.")
-                    
+
             elif choice == '3':
-                pass
+                self.list_all_students()
+                
             elif choice == '4':
                 pass
             elif choice == '5':
