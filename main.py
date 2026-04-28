@@ -1,5 +1,5 @@
 from even_odd_seperator.even_odd_extractor import EvenOddExtractor
-
+from highest_gwa_finder.find_highest_gwa import run_highest_gwa_program
 
 def run_even_odd_program():
     """Even and Odd separator submenu."""
@@ -87,7 +87,7 @@ Choose program to run: """)
     if program_chooser == '1':
         run_even_odd_program()
     elif program_chooser == '2':
-        pass
+        run_highest_gwa_program()
     elif program_chooser in ('Q', 'q'):
         print("Exiting program. Goodbye!")
         break
