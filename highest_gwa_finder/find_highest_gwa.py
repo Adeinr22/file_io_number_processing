@@ -84,7 +84,18 @@ class HighestGwaFinder:
         print("-" * 30)
 
     def find_highest_gwa(self):
-        pass
+        """Finds and displays the student(s) with the highest GWA (lowest numeric value)."""
+        students = self.read_students()
+        if not students:
+            print("No student records available. Please add students first.")
+            return
+        min_gwa = min(s.gwa for s in students)
+        top_students = [s for s in students if s.gwa == min_gwa]
+        print("\nSTUDENT WITH THE HIGHEST GWA:")
+        print("-" * 35)
+        for student in top_students:
+            print(f"{student.name} → GWA: {student.gwa}")
+        print("-" * 35)
 
     def run(self):
         """Main interactive menu for the Highest GWA program."""
@@ -96,7 +107,6 @@ class HighestGwaFinder:
 (4)  Show student with highest GWA
 (5)  Exit to Main Menu""")
             choice = input("\n Choose an option (1-5): ").strip()
-
             if choice == '1':
                 name = input("Enter student name: ").strip()
                 if not name:
@@ -109,27 +119,21 @@ class HighestGwaFinder:
                     self.add_students(name, gwa)
                 except ValueError:
                     print("Invalid GWA. Please enter a number (e.g., 1.5).")
-
             elif choice == '2':
                 name = input("Enter the exact name of the student to remove: ").strip()
                 if name:
                     self.remove_students(name)
                 else:
                     print("Name cannot be empty.")
-
             elif choice == '3':
                 self.list_all_students()
-                
             elif choice == '4':
-                pass
+                self.find_highest_gwa()
             elif choice == '5':
                 print("Returning to main menu...")
                 break
             else:
                 print("Invalid input. Please enter 1, 2, 3, 4, or 5.")
-
-
-
 
 def run_highest_gwa_program():
     """Entry point called from main.py."""

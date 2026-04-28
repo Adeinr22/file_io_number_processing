@@ -1,2 +1,3 @@
 andrei, 1.0
 jules, 1.25
+dela, 1.0
