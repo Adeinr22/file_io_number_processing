@@ -22,3 +22,13 @@ class MyLifeWriter:
             print(f"Successfully saved {len(lines)} lines to {self.filepath}")
         except Exception as e:
             print(f"Error writing file: {e}")
+
+    def run(self):
+        """Main entry point for the mylife writer program."""
+        self.write_lines()
+        input("\nPress Enter to return to the main menu...")
+
+def run_mylife_writer():
+    """Function called from main.py."""
+    writer = MyLifeWriter()
+    writer.run()
