@@ -83,6 +83,7 @@ MAIN MENU:
     (1) Even and Odd separator program
     (2) Highest GWA finder
     (3) Write to mylife.txt
+    (4) Process integers 
     (Q) Quit
                             
 Choose program to run: """)

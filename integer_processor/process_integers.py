@@ -67,6 +67,11 @@ class IntegerProcessor:
 
     def run(self):
         """Main entry point."""
+        print("\nInteger Processor: Squares of Evens, Cubes of Odds")
+        integers = self.read_integers()
+        if integers:
+            self.process_and_write(integers)
+        input("\nPress Enter to return to the main menu...")
 
 def run_integer_processor():
     """Function called from main.py."""
