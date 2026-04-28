@@ -1,6 +1,7 @@
 from even_odd_seperator.even_odd_extractor import EvenOddExtractor
 from highest_gwa_finder.find_highest_gwa import run_highest_gwa_program
 from mylife_writer.write_mylife import run_mylife_writer
+from integer_processor.process_integers import run_integer_processor
 
 def run_even_odd_program():
     """Even and Odd separator submenu."""
@@ -92,8 +93,10 @@ Choose program to run: """)
         run_highest_gwa_program()
     elif program_chooser == '3':
         run_mylife_writer()
+    elif program_chooser == '4':
+        run_integer_processor()
     elif program_chooser in ('Q', 'q'):
         print("Exiting program. Goodbye!")
         break
     else:
-        print("Invalid choice. Please enter 1, 2, or Q.")
+        print("Invalid choice. Please enter 1, 2, 3, 4, or Q.")
