@@ -36,8 +36,34 @@ class IntegerProcessor:
             return []
         return integers
     
-    def process_and_write(self):
+    def process_and_write(self, integers):
         """Creates double.txt (square of evens) and triple.txt (cube of odds)."""
+        if not integers:
+            print("No integers to process. Aborting.")
+            return
+
+        evens_squared = []
+        odds_cubed = []
+
+        for num in integers:
+            if num % 2 == 0:
+                evens_squared.append(str(num ** 2))
+            else:
+                odds_cubed.append(str(num ** 3))
+
+        try:
+            with open(self.double_path, "w") as f:
+                f.write("\n".join(evens_squared))
+            print(f"Written {len(evens_squared)} even squares to {self.double_path}")
+        except Exception as e:
+            print(f"Error writing double.txt: {e}")
+
+        try:
+            with open(self.triple_path, "w") as f:
+                f.write("\n".join(odds_cubed))
+            print(f"Written {len(odds_cubed)} odd cubes to {self.triple_path}")
+        except Exception as e:
+            print(f"Error writing triple.txt: {e}")
 
     def run(self):
         """Main entry point."""
