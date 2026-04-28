@@ -16,7 +16,28 @@ class HighestGwaFinder:
         self.filepath = os.path.join(os.path.dirname(os.path.abspath(__file__)), filename)
 
     def read_students(self):
-        pass
+        """Reads all students from the file and returns a list of Student objects."""
+        students = []
+        try:
+            with open(self.filepath, "r") as file:
+                for line_num, line in enumerate(file, start=1):
+                    line = line.strip()
+                    if not line:
+                        continue
+                    if ',' not in line:
+                        raise ValueError(f"Line {line_num}: missing comma separator")
+                    name_part, gwa_part = line.split(',', 1)
+                    name = name_part.strip()
+                    try:
+                        gwa = float(gwa_part.strip())
+                    except ValueError:
+                        raise ValueError(f"Line {line_num}: invalid GWA value '{gwa_part.strip()}'")
+                    students.append(Student(name, gwa))
+        except FileNotFoundError:
+            open(self.filepath, 'a').close()
+        except Exception as e:
+            print(f"Error reading file: {e}")
+        return students
 
     def write_students(self):
         pass
