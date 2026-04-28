@@ -40,7 +40,13 @@ class HighestGwaFinder:
         return students
 
     def write_students(self):
-        pass
+        """Writes the list of Student objects back to the file."""
+        try:
+            with open(self.filepath, "w") as file:
+                for student in students:
+                    file.write(f"{student.name}, {student.gwa}\n")
+        except Exception as e:
+            print(f"Error writing to file: {e}")
 
     def add_students(self):
         pass
