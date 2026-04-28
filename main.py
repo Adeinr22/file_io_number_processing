@@ -1,6 +1,13 @@
 from even_odd_seperator.even_odd_extractor import EvenOddExtractor
 
 while True:
+    program_chooser = input("""
+MAIN MENU:
+    (1) Even and Odd seperator program
+    (2) Highest GWA finder
+                            
+    choose program to run: """)
+while True:
 
     program_1 = input("""
 MENU:
