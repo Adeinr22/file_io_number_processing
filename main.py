@@ -8,6 +8,7 @@ MENU:
     (1) Clear Data
     (2) Remove Data
     (3) Generate Integers
+    (4) Extract Even Numbers
     (C) Cancel
                       
 what to do: """)
@@ -56,6 +57,9 @@ what to do: """)
                     EvenOddExtractor.random_integer_generator(int(numbers_to_generate))
             except:
                 print("Invalid Input")
+    
+    elif program_1 == '4':
+        EvenOddExtractor.even_extractor()
 
     elif program_1 == 'C':
         break

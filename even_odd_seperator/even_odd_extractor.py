@@ -72,7 +72,6 @@ class EvenOddExtractor():
             else:
                 print("Invalid input. Only 1 or 2 or C are allowed")
         
-        
     def random_integer_generator(numbers_to_generate):
         """Generate Random Integers based on the user's input"""
         from random import randint
@@ -90,3 +89,18 @@ class EvenOddExtractor():
                         f.write(f"{randint(-1000, 1000)}")
                     else:
                         f.write(f"{randint(-1000, 1000)}\n")
+
+    def even_extractor():
+        with open(path.join(path.dirname(path.abspath(__file__)), "numbers.txt"), "r") as f:
+            all_numbers = f.readlines()
+        even_numbers = []
+        for i in all_numbers:
+            if (int(i) % 2) == 0:
+                even_numbers.append(i)
+        with open(path.join(path.dirname(path.abspath(__file__)), "even.txt"), "w") as f:
+            f.writelines(even_numbers)
+        for i in even_numbers:
+            if i in all_numbers:
+                all_numbers.remove(i)
+        with open(path.join(path.dirname(path.abspath(__file__)), "numbers.txt"), "w") as f:
+            f.writelines(all_numbers)
