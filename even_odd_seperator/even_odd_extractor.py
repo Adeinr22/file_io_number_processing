@@ -119,3 +119,22 @@ class EvenOddExtractor():
                 all_numbers.remove(i)
         with open(path.join(path.dirname(path.abspath(__file__)), "numbers.txt"), "w") as f:
             f.writelines(all_numbers)
+
+    def extract_both():
+        with open(path.join(path.dirname(path.abspath(__file__)), "numbers.txt"), "r") as f:
+            all_numbers = f.readlines()
+        even_numbers = []
+        odd_numbers = []
+        for i in all_numbers:
+            if (int(i) % 2) == 0:
+                even_numbers.append(i)
+        with open(path.join(path.dirname(path.abspath(__file__)), "even.txt"), "w") as f:
+            f.writelines(even_numbers)
+        for i in all_numbers:
+            if (int(i) % 2) == 1:
+                odd_numbers.append(i)
+        with open(path.join(path.dirname(path.abspath(__file__)), "odd.txt"), "w") as f:
+            f.writelines(odd_numbers)
+        with open(path.join(path.dirname(path.abspath(__file__)), "numbers.txt"), "w") as f:
+            pass
+

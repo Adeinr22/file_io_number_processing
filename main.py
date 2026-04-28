@@ -9,6 +9,8 @@ MENU:
     (2) Remove Data
     (3) Generate Integers
     (4) Extract Even Numbers
+    (5) Extract Odd Numbers
+    (6) Extract Both Even and Odd Numbers
     (C) Cancel
                       
 what to do: """)
@@ -60,6 +62,12 @@ what to do: """)
     
     elif program_1 == '4':
         EvenOddExtractor.even_extractor()
+
+    elif program_1 == '5':
+        EvenOddExtractor.odd_extractor()
+
+    elif program_1 == '6':
+        EvenOddExtractor.extract_both()
 
     elif program_1 == 'C':
         break
