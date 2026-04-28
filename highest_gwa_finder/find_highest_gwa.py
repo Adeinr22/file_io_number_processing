@@ -9,8 +9,8 @@ class Student():
     def __repr__(self):
         return f"student(name='{self.name}', gwa={self.gwa})"
     
-class StudentRecords:
-    """Manages a collection of students and provides queries."""
-    def __init__(self, file_path: str):
-        self.students = []
-        self.load_from_file(file_path)
+class HighestGwaFinder:
+    """Reads student data from a file and finds the student with the highest GWA."""
+    
+    def __init__(self, filename: str = "students.txt"):
+        self.filepath = os.path.join(os.path.dirname(os.path.abspath(__file__)), filename)

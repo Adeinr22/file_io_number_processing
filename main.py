@@ -19,7 +19,8 @@ what to do: """)
 
         if program_1 == '1':
             while True:
-                file_choosed = input("(1) numbers.txt | (2) even.txt | (3) odd.txt | (C) to cancel \nEnter the number for the file you want to remove data from: ")
+                file_choosed = input("(1) numbers.txt | (2) even.txt | (3) odd.txt | (C) to cancel " \
+                "\nEnter the number for the file you want to remove data from: ")
                 if file_choosed in ('C', 'c'):
                     break
                 elif file_choosed == '1':
@@ -33,7 +34,8 @@ what to do: """)
 
         elif program_1 == '2':
             while True:
-                file_choosed = input("(1) numbers.txt | (2) even.txt | (3) odd.txt | (C) to cancel \nEnter the number for the file you want to remove data from: ")
+                file_choosed = input("(1) numbers.txt | (2) even.txt | (3) odd.txt | (C) to cancel " \
+                "\nEnter the number for the file you want to remove data from: ")
                 if file_choosed in ('C', 'c'):
                     break
                 elif file_choosed == '1':
